@@ -4,7 +4,27 @@ namespace FizzBuzz.Library
     {
         public string Print(int number)
         {
-            return string.Empty;
+            if (IsDivisibleByThree(number) && IsDivisibleByFive(number))
+            {
+                return "FizzBuzz";
+            }
+            if (IsDivisibleByFive(number))
+            {
+                return "Buzz";
+            }
+            else if (IsDivisibleByThree(number))
+            {
+                return "Fizz";
+            }
+            return number.ToString();
+        }
+        private bool IsDivisibleByThree(int number)
+        {
+            return number % 3 == 0;
+        }
+        private bool IsDivisibleByFive(int number)
+        {
+            return number % 5 == 0;
         }
     }
 }
